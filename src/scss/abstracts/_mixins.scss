@@ -1,0 +1,62 @@
+@use "./variables";
+@use "./functions";
+/*--------------------------------------------------------*\
+    #mixins
+\*---------------------------------------------------------*/
+
+/// define a flex container
+/// @param{align-items} $al-con
+/// vertical or horisonetal alignment of item depending on flex-d
+/// @param{justify-content} $js-con
+/// veritical or horisontal alignment of item depending on flex-d
+/// @param{flex-d} flex-direction
+/// sets the main and cross axis
+@mixin flxify($al-con: center, $js-con: space-between, $flex-d: row) {
+  display: flex;
+  align-items: $al-con;
+  justify-content: $js-con;
+  flex-direction: $flex-d;
+}
+
+@mixin respond-to($breakPoint) {
+  @media screen and (min-width: map-get($map:variables.$breakPoints,$key:$breakPoint)) {
+    @content;
+  }
+}
+
+/*!Mixin used for setting fluid properties such as typography and widths
+src = https://codepen.io/MadeByMike/pen/vNrvdZ?editors=0110
+//Renamed some variables
+*/
+
+/// used of setting fulid properties such as fontsize
+@mixin interpolate(
+  $properties,
+  $min-screen,
+  $max-screen,
+  $min-value,
+  $max-value
+) {
+  & {
+    @each $property in $properties {
+      #{$property}: $min-value;
+    }
+
+    @media screen and (min-width: $min-screen) {
+      @each $property in $properties {
+        #{$property}: functions.calc-interpolation(
+          $min-screen,
+          $min-value,
+          $max-screen,
+          $max-value
+        );
+      }
+    }
+
+    @media screen and (min-width: $max-screen) {
+      @each $property in $properties {
+        #{$property}: $max-value;
+      }
+    }
+  }
+}
