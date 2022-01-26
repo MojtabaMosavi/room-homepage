@@ -1,0 +1,28 @@
+@use "../abstracts/mixins";
+@use "../abstracts/functions" as *;
+/*--------------------------------------------------------*\
+    #header
+\*---------------------------------------------------------*/
+
+.header {
+  &__wrapper {
+    @include mixins.flexify(
+      $al-con: center,
+      $js-con: space-between,
+      $flex-d: row-reverse
+    );
+    margin-top: rem(43px);
+  }
+
+  &__logo {
+    margin: 0 auto;
+  }
+
+  &__hamburger-nav {
+    background: inherit;
+  }
+}
+
+body {
+  background: black;
+}

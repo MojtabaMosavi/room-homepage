@@ -1,3 +1,5 @@
+@use "../abstracts/mixins";
+@use "../abstracts/functions" as *;
 /*--------------------------------------------------------*\
     #helpers 
 \*---------------------------------------------------------*/
@@ -15,4 +17,16 @@
 
 .no-scroll {
   overflow-y: hiddens;
+}
+
+.container {
+  @include mixins.interpolate(
+    max-width,
+    rem(375px),
+    rem(1440px),
+    22.5rem,
+    82rem
+  );
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
