@@ -1,8 +1,13 @@
+@use "./functions" as *;
 /*--------------------------------------------------------*\
     #variabels  
 \*---------------------------------------------------------*/
 
 :root {
+  --mobile-view-size: rem(375px);
+  --desktop-view-size: rem(1440px);
+  --container-min-width: rem(324px);
+  --container-max-width: rem(1300px);
   // colors
   --dark-gray: hsl(0, 0%, 63%);
   --black: hsl(0, 0%, 0%);
