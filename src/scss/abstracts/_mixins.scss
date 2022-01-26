@@ -11,7 +11,7 @@
 /// veritical or horisontal alignment of item depending on flex-d
 /// @param{flex-d} flex-direction
 /// sets the main and cross axis
-@mixin flxify($al-con: center, $js-con: space-between, $flex-d: row) {
+@mixin flexify($al-con: center, $js-con: space-between, $flex-d: row) {
   display: flex;
   align-items: $al-con;
   justify-content: $js-con;
