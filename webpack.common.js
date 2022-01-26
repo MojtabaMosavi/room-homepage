@@ -32,12 +32,12 @@ module.exports = {
 
             // styles --------------------------
             {
-                test: /\.s[c|a]css$/i,
+                test: /\.s(a|c)ss$/i,
                 exclude:/(node_modules)/,
                 use:[
                     "style-loader",
-                    "scss-loader",
-                    "css-loader"
+                    "css-loader",
+                    "sass-loader"
 
                 ]
             },
@@ -45,13 +45,13 @@ module.exports = {
             // images ------------------------------
             {
                 test: /\.(gif|jpg|jpeg|svg|png)$/i,
-                use:"asset/resurese"
+                type:"asset/resource"
             },
 
             // fonts ----------------------------------
             {
                 test:/\.(woff|woff2|eot|ttf|otf)$/i,
-                use: "asset/resource"
+                type: "asset/resource"
             }
 
         ]
