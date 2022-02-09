@@ -16,13 +16,31 @@
 
   &__logo {
     margin: 0 auto;
+    z-index: 1;
   }
 
   &__hamburger-nav {
     background: inherit;
   }
-}
 
-body {
-  background: black;
+  // tablet view-------------------------------------
+  @include mixins.respond-to("tablet") {
+    &__wrapper {
+      flex-direction: initial;
+      justify-content: start;
+      margin-top: rem(61px);
+    }
+
+    &__logo {
+      margin: 0;
+    }
+
+    &__hamburger-nav {
+      display: none;
+    }
+
+    &__menu {
+      margin-left: rem(57px);
+    }
+  }
 }
