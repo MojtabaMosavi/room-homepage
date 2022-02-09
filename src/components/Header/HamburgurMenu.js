@@ -1,21 +1,30 @@
 import React from "react";
-import { useState } from "react";
+import PropTypes from "prop-types";
 
-const HamburgerMenu = () => {
-    const [toggle,setToggle] = useState(false);
-
+const HamburgerMenu = (props) => {
+    const {toggled} = props;
     return (
         <button 
-        className={`header__hamburger-nav ${toggle ? "hamburger-nav--active":"hamburger-nav" }`}
+        className={`header__hamburger-nav ${toggled ? "hamburger-nav--active" :"hamburger-nav"}`}
         aria-label="navigation menu"
-        aria-expanded ={toggle ? "true" : "false"}
+        aria-expanded ={toggled ? "true" : "false"}
         aria-controls="menu"
         type="button"
-        onClick={()=> {setToggle(toggle => !toggle)} }
+        onClick={props.handleClick}
         >
         <span className="hamburger-nav__bar" aria-hidden="true"></span>
     </button>
     );
+}
+
+HamburgerMenu.propTypes = {
+    toggled: PropTypes.bool,
+    handleClick: PropTypes.func.isRequired,
+}
+
+HamburgerMenu.deafultProps = {
+    toggled: false,
+    handleClick: fn => fn,
 }
  
 export default HamburgerMenu;
