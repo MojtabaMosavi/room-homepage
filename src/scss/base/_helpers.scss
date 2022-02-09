@@ -29,4 +29,9 @@
   );
   margin: 0 auto;
   padding: 0 1.5rem;
+
+  // dekstop view -------------------------
+  @include mixins.respond-to("tablet") {
+    padding: 0;
+  }
 }
