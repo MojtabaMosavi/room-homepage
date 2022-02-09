@@ -1,0 +1,17 @@
+@use "../abstracts/mixins";
+@use "../abstracts/functions" as *;
+/*--------------------------------------------------------*\
+    #header
+\*---------------------------------------------------------*/
+
+.hero {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  &__slider {
+    max-width: rem(838px);
+    height: rem(361px);
+  }
+}
