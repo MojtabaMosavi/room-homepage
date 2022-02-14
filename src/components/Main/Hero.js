@@ -1,12 +1,12 @@
-import React from "react";
+import React,{useState} from "react";
 import Slider from "./Slider";
+import HeroArticle from "./HeroArticle";
+const articleData = require("./articleData");
 
 import image1Desktop from "../../assets/images/desktop-image-hero-1.jpg";
 import image1Mobile from "../../assets/images/mobile-image-hero-1.jpg";
-
 import image2Desktop from "../../assets/images/desktop-image-hero-2.jpg";
 import image2Mobile from "../../assets/images/mobile-image-hero-2.jpg";
-
 import image3Desktop from "../../assets/images/desktop-image-hero-3.jpg";
 import image3Mobile from "../../assets/images/mobile-image-hero-3.jpg";
 
@@ -28,15 +28,31 @@ const images = [
 
 
 const Hero = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [direction,setDirection] = useState("forward");
     return (  
         <section className="hero">
             <div className="hero__wrapper">
-                <Slider images={images}/>
-                <article className="hero__content">
-                    <h1 className="hero__heading"></h1>
-                    <p className="hero__text"></p>
-                    <button className="hero__cta"></button>
-                </article>
+                <Slider images={images} 
+                        setCurrentIndex={setCurrentIndex} 
+                        currentIndex={currentIndex}
+                        setDirection={setDirection}
+                />
+                <div className="hero__content container">
+                    {
+                        articleData.map((item,index) => {
+                            return(
+                                <HeroArticle direction= {direction}
+                                             active={index === currentIndex} 
+                                             {...item} 
+                                             key={index}
+                            />
+                            )
+
+                        })
+                    }
+                </div>
+
             </div>
         </section>
     );

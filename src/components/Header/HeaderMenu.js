@@ -7,7 +7,7 @@ const HeaderMenu = (props) => {
             {props.navLinks.map( link => {
                 return (
                     <li className="menu__item" key={link}>
-                        <a className="menu__link">{link}</a>
+                        <a href="#" className="menu__link">{link}</a>
                     </li>
                 )
 

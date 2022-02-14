@@ -4,8 +4,7 @@ import PropTypes from "prop-types";
 
 
 const Slider = (props) => {
-  const { images } = props;
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const { images,setCurrentIndex,currentIndex,setDirection} = props;
 
   return (
     <div className=" hero__slider slider">
