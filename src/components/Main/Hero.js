@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import Slider from "./Slider";
 import HeroArticle from "./HeroArticle";
-const imageData = require("./ImageData");
+const imageData = require("./ImageData.js");
 
 import image1Desktop from "../../assets/images/desktop-image-hero-1.jpg";
 import image1Mobile from "../../assets/images/mobile-image-hero-1.jpg";
@@ -25,7 +25,6 @@ const images = [
     },
 
 ]
-
 
 const Hero = () => {
     const [currentIndex, setCurrentIndex] = useState(0);

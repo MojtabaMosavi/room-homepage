@@ -1,6 +1,5 @@
 import React from "react";
-import PropType from "prop-types";
-const Data = require("./ArticleData");
+const Data = require("./ArticleData.js");
 import Article from "./Article";
 
 import productImageDark from "../../assets/images/image-about-dark.jpg"
