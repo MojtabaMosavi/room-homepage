@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import Slider from "./Slider";
 import HeroArticle from "./HeroArticle";
-const articleData = require("./articleData");
+const imageData = require("./ImageData");
 
 import image1Desktop from "../../assets/images/desktop-image-hero-1.jpg";
 import image1Mobile from "../../assets/images/mobile-image-hero-1.jpg";
@@ -40,7 +40,7 @@ const Hero = () => {
                 />
                 <div className="hero__content container">
                     {
-                        articleData.map((item,index) => {
+                        imageData.map((item,index) => {
                             return(
                                 <HeroArticle direction= {direction}
                                              active={index === currentIndex} 

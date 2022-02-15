@@ -1,5 +1,6 @@
 import React from "react";
 import Hero from "./Hero";
+import ProductSection from "./ProductSection";
 
 
 const Main = () => {
@@ -7,6 +8,7 @@ const Main = () => {
         <main className="main">
             <div className="main__wrapper">
                 <Hero/>
+                <ProductSection/>
             </div>
         </main>
     );

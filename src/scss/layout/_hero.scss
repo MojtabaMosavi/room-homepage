@@ -5,18 +5,13 @@
 \*---------------------------------------------------------*/
 
 .hero {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-
   &__slider {
-    height: rem(361px);
+    height: rem(377px);
   }
 
   &__description {
     display: none;
-    margin: 71px 0px 71px 8px;
+    margin: rem(71px) 0 rem(71px) rem(8px);
 
     &--active {
       animation: fadeInRight;
@@ -26,22 +21,22 @@
   }
 
   &__heading {
-    font-size: 26px;
+    font-size: rem(26px);
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: rem(15px);
   }
 
   &__text {
-    font-size: 11.7px;
-    line-height: 20px;
+    font-size: rem(11.7px);
+    line-height: rem(20px);
     font-weight: 600;
     color: var(--dark-gray);
-    margin-bottom: 51px;
+    margin-bottom: rem(51px);
   }
 
   &__cta {
-    letter-spacing: 11px;
-    font-size: 14px;
+    letter-spacing: rem(11px);
+    font-size: rem(14px);
     text-transform: uppercase;
     font-weight: 300;
     background: inherit;
@@ -79,8 +74,7 @@
     }
 
     &__content {
-      text-align: center;
-      max-width: 50rem;
+      max-width: 40rem;
     }
   }
 
@@ -88,12 +82,13 @@
   @include mixins.respond-to("laptop") {
     &__wrapper {
       @include mixins.flexify($al-con: start, $js-con: center);
+      height: 34rem;
     }
 
     &__slider {
       min-height: initial;
       max-width: 68.375rem;
-      height: rem(535px);
+      height: 100%;
       flex: 2.3;
     }
 
@@ -124,6 +119,10 @@
       &::after {
         width: 29%;
         margin-left: 11.8rem;
+      }
+
+      &:focus {
+        outline: max(1px, 0.1em) dashed var(--black);
       }
     }
   }

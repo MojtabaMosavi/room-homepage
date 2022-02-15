@@ -37,6 +37,11 @@
       background-color: var(--very-dark-gray);
     }
 
+    &:focus {
+      outline: max(1px, 0.1em) dashed var(--white);
+      outline-offset: -0.25em;
+    }
+
     &--prev {
       background: url("../assets/images/icon-angle-left.svg") center / 20%
         no-repeat;
