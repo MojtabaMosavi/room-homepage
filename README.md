@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [https://room-homepage1.netlify.app](https://your-live-site-url.com)
+- Live Site URL: [https://room-homepage1.netlify.app](https://room-homepage1.netlify.app/)
 
 ## My process
 
