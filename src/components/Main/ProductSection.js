@@ -1,6 +1,7 @@
 import React from "react";
-const Data = require("./ArticleData.js");
 import Article from "./Article";
+const articleData = require("./ArticleData.js");
+
 
 import productImageDark from "../../assets/images/image-about-dark.jpg"
 import productImageLight from "../../assets/images/image-about-light.jpg"
@@ -18,7 +19,7 @@ const ProductSection = () => {
                 
                 <div className="product__info container">
                     {
-                        Data.map((data,i) => {
+                        articleData.map((data,i) => {
                         return (
                                 <Article {...data} key={i}/>
                         ) 
